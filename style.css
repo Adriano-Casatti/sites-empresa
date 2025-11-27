@@ -10,6 +10,12 @@ body {
     overflow-x: hidden;
 }
 
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
 /* ================================
    HEADER
 ================================ */
@@ -24,6 +30,12 @@ body {
     position: sticky;
     top: 0;
     z-index: 10;
+}
+
+.topo .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
@@ -68,27 +80,30 @@ nav a:hover {
 ================================ */
 
 .hero {
+    padding: 90px 0;
+}
+
+.hero .container {
     display: flex;
     justify-content: space-between;
-    padding: 90px 50px;
     align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
+    gap: 60px;
 }
 
 .hero-text {
-    max-width: 45%;
+    flex: 1;
+    max-width: 600px;
 }
 
 .hero-text h1 {
-    font-size: 44px;
+    font-size: 48px;
     margin-bottom: 12px;
     font-weight: 700;
 }
 
 .hero-text p {
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .btn-cta {
@@ -107,12 +122,11 @@ nav a:hover {
     filter: brightness(0.85);
 }
 
-/* LOGO AO LADO */
 .hero-logo img {
-    width: 350px;
+    width: 420px;
     max-width: 100%;
     border-radius: 12px;
-    filter: drop-shadow(0 0 20px gold);
+    filter: drop-shadow(0 0 22px gold);
     animation: pulse 3s infinite ease-in-out;
 }
 
@@ -127,139 +141,117 @@ nav a:hover {
 ================================ */
 
 .servicos, .planos {
-    padding: 70px 50px;
+    padding: 80px 0;
 }
 
 .servicos h2, .planos h2 {
-    font-size: 32px;
+    font-size: 34px;
     color: gold;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 /* ================================
-   LISTA DE SERVIÇOS
+   SERVIÇOS GRID PREMIUM
 ================================ */
 
-.lista-servicos {
-    margin-top: 25px;
-    padding-left: 20px;
-    line-height: 1.8;
-    font-size: 18px;
-    max-width: 800px;
+.servicos-sub {
+    color: #ccc;
+    max-width: 700px;
+    margin-bottom: 40px;
+    line-height: 1.7;
 }
 
-.lista-servicos li {
-    margin-bottom: 8px;
-    color: #ddd;
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
 }
 
-/* ================================
-   PLANO DE MANUTENÇÃO PREMIUM
-================================ */
-
-.manutencao-info {
-    margin-top: 45px;
-    background: rgba(255, 215, 0, 0.07);
-    padding: 25px 30px;
-    border-radius: 12px;
+.servico-card {
+    background: #0a0a0a;
+    padding: 28px;
+    border-radius: 14px;
     border: 1px solid rgba(255, 215, 0, 0.25);
-    max-width: 780px;
-    box-shadow: 0 0 18px rgba(255, 215, 0, 0.15);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.07);
+    text-align: center;
+    transition: 0.3s;
 }
 
-.manu-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 15px;
+.servico-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.25);
 }
 
-.manu-icone {
-    font-size: 26px;
+.servico-card .icon {
+    font-size: 38px;
+    margin-bottom: 12px;
     filter: drop-shadow(0 0 6px gold);
 }
 
-.manutencao-info h3 {
+.servico-card h3 {
+    margin-bottom: 10px;
     color: gold;
-    font-size: 24px;
-    margin: 0;
-}
-
-.manutencao-info p {
-    color: #e2e2e2;
-    line-height: 1.7;
-    margin-bottom: 15px;
-}
-
-.manu-lista {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-.manu-lista li {
-    margin-bottom: 8px;
-    font-size: 17px;
-    color: #ddd;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.manu-preco {
     font-size: 20px;
-    font-weight: 700;
-    color: gold;
+}
+
+.servico-card p {
+    color: #ccc;
+    line-height: 1.6;
 }
 
 /* ================================
-   CARDS
+   MANUTENÇÃO - CARD PREMIUM
+================================ */
+
+.manutencao-card {
+    background: #0a0a0a;
+    padding: 30px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    box-shadow: 0 0 18px rgba(255, 215, 0, 0.10);
+    max-width: 380px;
+    margin: 50px auto 0 auto;
+    text-align: center;
+}
+
+/* ================================
+   PLANOS
 ================================ */
 
 .cards {
     display: flex;
     gap: 30px;
     justify-content: center;
+    margin-top: 40px;
     flex-wrap: wrap;
 }
 
 .card {
     background: #0a0a0a;
-    padding: 30px;
+    padding: 32px;
     border-radius: 14px;
     border: 1px solid rgba(255, 215, 0, 0.25);
-    width: 280px;
-    box-shadow: 0 0 18px rgba(255, 215, 0, 0.07);
+    width: 290px;
+    box-shadow: 0 0 18px rgba(255, 215, 0, 0.10);
     transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 0 28px rgba(255, 215, 0, 0.25);
-}
-
-.card h3 {
-    text-align: center;
-    margin-bottom: 10px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.25);
 }
 
 .preco {
     text-align: center;
     color: gold;
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 700;
-}
-
-.card ul {
-    margin-top: 15px;
-    line-height: 1.7;
 }
 
 .btn-card {
     background: gold;
     padding: 12px;
-    margin-top: 20px;
+    margin-top: 22px;
     display: block;
     text-align: center;
     border-radius: 8px;
@@ -278,10 +270,10 @@ nav a:hover {
 ================================ */
 
 .footer {
-    padding: 45px;
+    padding: 50px 0;
     text-align: center;
     border-top: 1px solid rgba(255, 215, 0, 0.12);
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 .whats {
@@ -301,35 +293,25 @@ nav a:hover {
 
 @media (max-width: 980px) {
 
-    .topo {
-        padding: 18px 25px;
-    }
-
-    nav a {
-        margin-left: 15px;
-    }
-
-    .hero {
+    .hero .container {
         flex-direction: column;
-        padding: 50px 25px;
         text-align: center;
     }
 
-    .hero-text {
-        max-width: 100%;
+    .hero {
+        padding: 50px 0;
     }
 
     .hero-text h1 {
         font-size: 32px;
     }
 
-    .hero-text p {
-        font-size: 16px;
+    .hero-logo img {
+        width: 300px;
     }
 
-    .hero-logo {
-        display: flex;
-        justify-content: center;
+    nav a {
+        margin-left: 15px;
     }
 }
 
@@ -338,11 +320,12 @@ nav a:hover {
     .topo {
         flex-direction: column;
         gap: 15px;
+        padding: 20px;
     }
 
     nav {
         display: flex;
-        gap: 15px;
+        gap: 14px;
     }
 
     nav a {
@@ -355,12 +338,7 @@ nav a:hover {
     }
 
     .servicos, .planos {
-        padding: 40px 25px;
-    }
-
-    .cards {
-        flex-direction: column;
-        align-items: center;
+        padding: 45px 0;
     }
 
     .card {
@@ -368,59 +346,30 @@ nav a:hover {
         max-width: 330px;
     }
 }
-.manutencao-card {
+.hero {
+    max-width: 1200px;  
+    margin: 0 auto;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    text-align: center; /* Textos centralizados */
+    padding: 80px 20px;
+}
+section h2, 
+section h1 {
+    text-align: center;
     width: 100%;
-    max-width: 350px;
-    margin-top: 30px;
 }
-.servicos-sub {
-    color: #ccc;
-    max-width: 700px;
-    margin-bottom: 40px;
-    line-height: 1.7;
-}
-
-.servicos-grid {
+.cards-container {
+    max-width: 1300px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-    margin-bottom: 50px;
-}
-
-.servico-card {
-    background: #0a0a0a;
-    padding: 25px;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 215, 0, 0.25);
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.07);
-    transition: 0.3s;
-    text-align: center;
-}
-
-.servico-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
-}
-
-.servico-card .icon {
-    font-size: 36px;
-    display: block;
-    margin-bottom: 12px;
-    filter: drop-shadow(0 0 6px gold);
-}
-
-.servico-card h3 {
-    margin-bottom: 10px;
-    color: gold;
-    font-size: 20px;
-}
-
-.servico-card p {
-    color: #ccc;
-    line-height: 1.6;
+    gap: 30px;
+    justify-content: center;
 }
 .manutencao-card {
-    width: 100%;
-    max-width: 420px; /* deixa ele do tamanho ideal */
-    margin: 40px auto 0 auto; /* CENTRALIZA TOTAL */
+    max-width: 420px;
+    margin: 40px auto;
 }
